@@ -1,4 +1,4 @@
-export default [
+const users = [
   {
     username: "Kitra",
     email: "nullam@outlook.org",
@@ -30,3 +30,5 @@ export default [
     created_at: "6,05,21",
   },
 ];
+
+export default users;

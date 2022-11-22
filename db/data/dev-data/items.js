@@ -1,4 +1,4 @@
-export default [
+const items = [
   {
     owner_id: 3,
     name: "In",
@@ -54,7 +54,7 @@ export default [
     quantity: 3,
   },
   {
-    owner_id: 0,
+    owner_id: 1,
     name: "purus,",
     description:
       "tempor, est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi",
@@ -63,7 +63,7 @@ export default [
     quantity: 9,
   },
   {
-    owner_id: 0,
+    owner_id: 1,
     name: "volutpat. Nulla facilisis. Suspendisse",
     description:
       "commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus",
@@ -121,7 +121,7 @@ export default [
       "inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt",
     preview_url: "https://guardian.co.uk/sub",
     cost: 475,
-    quantity: 0,
+    quantity: 1,
   },
   {
     owner_id: 4,
@@ -173,6 +173,8 @@ export default [
     description: "aliquet lobortis, nisi nibh lacinia",
     preview_url: "http://bbc.co.uk/group/9",
     cost: 231,
-    quantity: 0,
+    quantity: 1,
   },
 ];
+
+export default items;
