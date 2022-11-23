@@ -13,3 +13,21 @@ describe("GET /users", () => {
     expect(Array.isArray(body.users)).toBe(true);
   });
 });
+
+describe("POST /users", () => {
+  test("Status: 201, returns the inserted user", async () => {
+    const user = { username: "NewUser125", email: "NewUser125@gmail.com" };
+    const { body } = await request(app).post("/users").send(user).expect(201);
+    expect(body.user[0]).toEqual({ user_id: expect.any(Number), ...user });
+  });
+
+  test("Status: 201, inserts the user into the database", async () => {
+    const user = { username: "NewUser125", email: "NewUser125@gmail.com" };
+    await request(app).post("/users").send(user);
+    const results = await db.query(
+      `SELECT * FROM users WHERE username = $1 AND email = $2`,
+      [user.username, user.email]
+    );
+    expect(results.rowCount).toBe(1);
+  });
+});
