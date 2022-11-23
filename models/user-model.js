@@ -5,11 +5,11 @@ const fetchUsers = async () => {
   return results.rows;
 };
 
-const fetchUserById = async (user_id) => {
+const fetchUserByID = async (user_id) => {
   const results = await db.query(
     `SELECT * FROM users WHERE user_id = ${user_id}`
   );
   return results.rows;
 };
 
-export { fetchUsers, fetchUserById };
+export { fetchUsers, fetchUserByID };

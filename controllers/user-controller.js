@@ -1,4 +1,4 @@
-import { fetchUserById, fetchUsers } from "../models/user-model.js";
+import { fetchUserByID, fetchUsers } from "../models/user-model.js";
 
 const getUsers = (request, response, next) => {
   fetchUsers()
@@ -11,7 +11,7 @@ const getUsers = (request, response, next) => {
 };
 
 const getUserByID = (request, response, next) => {
-  fetchUserById(request.params.user_id)
+  fetchUserByID(request.params.user_id)
     .then((user) => {
       response.status(200).send({ user });
     })
