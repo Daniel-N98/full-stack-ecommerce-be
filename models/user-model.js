@@ -1,7 +1,6 @@
 import db from "../db/connection.js";
 
 const fetchUsers = async () => {
-  console.log("Searching...");
   const results = await db.query("SELECT * FROM users");
   return results.rows;
 };
