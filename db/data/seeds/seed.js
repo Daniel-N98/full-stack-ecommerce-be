@@ -31,16 +31,14 @@ const seed = async ({ users, items }) => {
 
   const insertItems = format(
     "INSERT INTO items (user_id, name, description, preview_url, cost, quantity) VALUES %L RETURNING *;",
-    items.map(
-      ({ owner_id, name, description, preview_url, cost, quantity }) => [
-        owner_id,
-        name,
-        description,
-        preview_url,
-        cost,
-        quantity,
-      ]
-    )
+    items.map(({ user_id, name, description, preview_url, cost, quantity }) => [
+      user_id,
+      name,
+      description,
+      preview_url,
+      cost,
+      quantity,
+    ])
   );
 
   const itemsPromise = db.query(insertItems).then((result) => result.rows);
