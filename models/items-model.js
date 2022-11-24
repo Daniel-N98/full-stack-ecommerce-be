@@ -2,7 +2,7 @@ import db from "../db/connection.js";
 
 const fetchItems = async (user_id) => {
   const results = await db.query(
-    `SELECT * FROM items WHERE user_id = ${user_id}`
+    `SELECT * FROM items WHERE user_id = ${user_id} ORDER BY item_id ASC`
   );
   return results.rows;
 };
