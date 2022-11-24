@@ -15,6 +15,9 @@ const fetchUserByID = async (user_id) => {
 
 const postUser = async (body) => {
   const { username, email } = body;
+  if (!username || !email) {
+    return Promise.reject({ code: 400, message: "Invalid body" });
+  }
 
   const results = await db.query(
     `INSERT INTO users (username, email) VALUES ($1, $2) RETURNING *;`,
@@ -24,4 +27,22 @@ const postUser = async (body) => {
   return results.rows;
 };
 
-export { fetchUsers, fetchUserByID, postUser };
+const patchUser = async (user_id, body) => {
+  const { username, email } = body;
+  if (!username && !email) {
+    return Promise.reject({ code: 400, message: "Invalid body" });
+  }
+  let fields;
+  if (username) {
+    fields = `SET username='${username}'`;
+  }
+  if (email) {
+    fields += `, email='${email}'`;
+  }
+  const results = await db.query(
+    `UPDATE users ${fields} WHERE user_id = ${user_id} RETURNING *;`
+  );
+  return results.rows;
+};
+
+export { fetchUsers, fetchUserByID, postUser, patchUser };

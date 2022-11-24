@@ -3,10 +3,11 @@ import {
   getUserByID,
   getUsers,
   insertUser,
+  updateUser,
 } from "../controllers/user-controller.js";
 const userRouter = Router();
 
 userRouter.route("/").get(getUsers).post(insertUser);
-userRouter.get("/:user_id", getUserByID);
+userRouter.route("/:user_id").get(getUserByID).patch(updateUser);
 
 export { userRouter };
