@@ -1,4 +1,3 @@
-import { string } from "pg-format";
 import db from "../db/connection.js";
 
 const fetchUsers = async () => {
