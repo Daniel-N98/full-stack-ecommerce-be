@@ -1,6 +1,6 @@
 const items = [
   {
-    owner_id: 3,
+    user_id: 3,
     name: "In",
     description:
       "egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed",
@@ -9,7 +9,7 @@ const items = [
     quantity: 7,
   },
   {
-    owner_id: 1,
+    user_id: 1,
     name: "non, cursus",
     description:
       "elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque",
@@ -18,7 +18,7 @@ const items = [
     quantity: 3,
   },
   {
-    owner_id: 1,
+    user_id: 1,
     name: "morbi tristique senectus",
     description:
       "ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum",
@@ -27,7 +27,7 @@ const items = [
     quantity: 9,
   },
   {
-    owner_id: 1,
+    user_id: 1,
     name: "Mauris ut quam",
     description:
       "iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc",
@@ -36,7 +36,7 @@ const items = [
     quantity: 7,
   },
   {
-    owner_id: 4,
+    user_id: 4,
     name: "eros. Proin ultrices. Duis",
     description:
       "mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem",
@@ -45,7 +45,7 @@ const items = [
     quantity: 8,
   },
   {
-    owner_id: 2,
+    user_id: 2,
     name: "rhoncus id,",
     description:
       "at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi",
@@ -54,7 +54,7 @@ const items = [
     quantity: 3,
   },
   {
-    owner_id: 1,
+    user_id: 1,
     name: "purus,",
     description:
       "tempor, est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi",
@@ -63,7 +63,7 @@ const items = [
     quantity: 9,
   },
   {
-    owner_id: 1,
+    user_id: 1,
     name: "volutpat. Nulla facilisis. Suspendisse",
     description:
       "commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus",
@@ -72,7 +72,7 @@ const items = [
     quantity: 8,
   },
   {
-    owner_id: 3,
+    user_id: 3,
     name: "vehicula.",
     description:
       "per inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare.",
@@ -81,7 +81,7 @@ const items = [
     quantity: 4,
   },
   {
-    owner_id: 4,
+    user_id: 4,
     name: "eget metus. In",
     description:
       "vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla.",
@@ -90,7 +90,7 @@ const items = [
     quantity: 4,
   },
   {
-    owner_id: 3,
+    user_id: 3,
     name: "eros. Nam consequat",
     description:
       "nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci",
@@ -99,7 +99,7 @@ const items = [
     quantity: 6,
   },
   {
-    owner_id: 4,
+    user_id: 4,
     name: "ipsum non",
     description: "libero est, congue a, aliquet vel, vulputate",
     preview_url: "http://yahoo.com/settings",
@@ -107,7 +107,7 @@ const items = [
     quantity: 7,
   },
   {
-    owner_id: 3,
+    user_id: 3,
     name: "ullamcorper eu, euismod",
     description: "tellus lorem eu metus. In lorem. Donec elementum,",
     preview_url: "http://walmart.com/en-ca",
@@ -115,7 +115,7 @@ const items = [
     quantity: 5,
   },
   {
-    owner_id: 2,
+    user_id: 2,
     name: "non, vestibulum",
     description:
       "inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt",
@@ -124,7 +124,7 @@ const items = [
     quantity: 1,
   },
   {
-    owner_id: 4,
+    user_id: 4,
     name: "aliquet odio. Etiam ligula",
     description: "sagittis lobortis mauris. Suspendisse aliquet",
     preview_url: "https://guardian.co.uk/fr",
@@ -132,7 +132,7 @@ const items = [
     quantity: 2,
   },
   {
-    owner_id: 4,
+    user_id: 4,
     name: "dignissim tempor",
     description:
       "sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In",
@@ -141,7 +141,7 @@ const items = [
     quantity: 9,
   },
   {
-    owner_id: 1,
+    user_id: 1,
     name: "quam. Curabitur vel",
     description:
       "augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis",
@@ -150,7 +150,7 @@ const items = [
     quantity: 1,
   },
   {
-    owner_id: 1,
+    user_id: 1,
     name: "nunc id enim.",
     description:
       "consequat purus. Maecenas libero est, congue a, aliquet vel, vulputate eu, odio. Phasellus at",
@@ -159,7 +159,7 @@ const items = [
     quantity: 9,
   },
   {
-    owner_id: 4,
+    user_id: 4,
     name: "justo",
     description:
       "Nullam ut nisi a odio semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam",
@@ -168,7 +168,7 @@ const items = [
     quantity: 1,
   },
   {
-    owner_id: 3,
+    user_id: 3,
     name: "egestas. Sed pharetra, felis",
     description: "aliquet lobortis, nisi nibh lacinia",
     preview_url: "http://bbc.co.uk/group/9",
