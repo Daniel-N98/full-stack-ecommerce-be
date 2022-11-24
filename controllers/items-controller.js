@@ -1,7 +1,7 @@
 import { fetchItems, fetchItemByID } from "../models/items-model.js";
 
 const getItems = (request, response, next) => {
-  fetchItems(request.params.user_id)
+  fetchItems(request.params.user_id, request.query)
     .then((items) => {
       response.status(200).send({ items });
     })

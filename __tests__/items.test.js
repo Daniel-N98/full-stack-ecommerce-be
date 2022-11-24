@@ -45,4 +45,49 @@ describe("GET /items?order", () => {
       descending: false,
     });
   });
+  test("Status: 200, sorts items by item_id (default) in descending order", async () => {
+    const { body } = await request(app).get("/items/3?order=DESC").expect(200);
+    expect(body.items).toBeSortedBy("item_id", {
+      descending: true,
+    });
+  });
+});
+
+describe("GET /items?sort_by", () => {
+  test("Status: 200, sorts items by cost in ascending order", async () => {
+    const { body } = await request(app)
+      .get("/items/3?sort_by=cost&order=ASC")
+      .expect(200);
+    expect(body.items).toBeSortedBy("cost", {
+      descending: false,
+    });
+  });
+  test("Status: 200, sorts items by quantity in descending order", async () => {
+    const { body } = await request(app)
+      .get("/items/3?sort_by=quantity&order=DESC")
+      .expect(200);
+    expect(body.items).toBeSortedBy("quantity", {
+      descending: true,
+    });
+  });
+  test("Status: 200, sorts items by name in ascending order", async () => {
+    const { body } = await request(app)
+      .get("/items/3?sort_by=name&order=DESC")
+      .expect(200);
+    expect(body.items).toBeSortedBy("name", {
+      descending: true,
+    });
+  });
+  test("Status: 400, handles error when sort_by is invalid", async () => {
+    const { body } = await request(app)
+      .get("/items/3?sort_by=reviews")
+      .expect(400);
+    expect(body.message).toBe("Invalid query");
+  });
+  test("Status: 400, handles error when order is invalid", async () => {
+    const { body } = await request(app)
+      .get("/items/3?sort_by=cost&order=HIGH")
+      .expect(400);
+    expect(body.message).toBe("Invalid query");
+  });
 });
