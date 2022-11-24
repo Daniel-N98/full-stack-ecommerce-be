@@ -1,4 +1,4 @@
-import devData from "../dev-data/index.js";
+import devData from "../test-data/index.js";
 import seed from "./seed.js";
 import db from "../../connection.js";
 
