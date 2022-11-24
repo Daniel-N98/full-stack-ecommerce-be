@@ -1,4 +1,9 @@
-import { fetchUserByID, fetchUsers, postUser } from "../models/user-model.js";
+import {
+  fetchUserByID,
+  fetchUsers,
+  patchUser,
+  postUser,
+} from "../models/user-model.js";
 
 const getUsers = (request, response, next) => {
   fetchUsers()
@@ -28,4 +33,11 @@ const insertUser = (request, response, next) => {
     .catch((error) => next(error));
 };
 
-export { getUsers, getUserByID, insertUser };
+const updateUser = (request, response, next) => {
+  patchUser(request.params.user_id, request.body)
+    .then((user) => {
+      response.status(200).send({ user });
+    })
+    .catch((error) => next(error));
+};
+export { getUsers, getUserByID, insertUser, updateUser };

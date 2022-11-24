@@ -30,4 +30,39 @@ describe("POST /users", () => {
     );
     expect(results.rowCount).toBe(1);
   });
+
+  test("Status: 400, handles error the the user object does not contain both a username, and an email", async () => {
+    const user = { username: "NewUser125" };
+    const { body } = await request(app).post("/users").send(user).expect(400);
+    expect(body.message).toBe("Invalid body");
+  });
+
+  test("Status: 400, handles error the the user object does not contain both a username, and an email", async () => {
+    const user = { email: "NewUser125@gmail.com" };
+    const { body } = await request(app).post("/users").send(user).expect(400);
+    expect(body.message).toBe("Invalid body");
+  });
+});
+
+describe("PATCH /users/:user_id", () => {
+  test("Status: 200, returns the updated user", async () => {
+    const user = {
+      username: "UpdatedUser125",
+      email: "UpdatedUser125@gmail.com",
+    };
+    const { body } = await request(app)
+      .patch("/users/1")
+      .send(user)
+      .expect(200);
+    expect(body.user[0]).toEqual({ user_id: 1, ...user });
+  });
+
+  test("Status: 400, handles error when invalid properties are missing", async () => {
+    const user = {};
+    const { body } = await request(app)
+      .patch("/users/1")
+      .send(user)
+      .expect(400);
+    expect(body.message).toBe("Invalid body");
+  });
 });
