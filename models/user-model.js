@@ -32,13 +32,14 @@ const patchUser = async (user_id, body) => {
   if (!username && !email) {
     return Promise.reject({ code: 400, message: "Invalid body" });
   }
-  let fields;
+  let fields = "SET ";
   if (username) {
-    fields = `SET username='${username}'`;
+    fields += `username='${username}'`;
   }
   if (email) {
-    fields += `, email='${email}'`;
+    fields += (username ? ", " : "") + `email='${email}'`;
   }
+  console.log(fields);
   const results = await db.query(
     `UPDATE users ${fields} WHERE user_id = ${user_id} RETURNING *;`
   );

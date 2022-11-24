@@ -45,16 +45,26 @@ describe("POST /users", () => {
 });
 
 describe("PATCH /users/:user_id", () => {
-  test("Status: 200, returns the updated user", async () => {
+  test("Status: 200, returns the updated user with the username changed", async () => {
     const user = {
       username: "UpdatedUser125",
+    };
+    const { body } = await request(app)
+      .patch("/users/1")
+      .send(user)
+      .expect(200);
+    expect(body.user[0].username).toEqual(user.username);
+  });
+
+  test("Status: 200, returns the updated user with the email changed", async () => {
+    const user = {
       email: "UpdatedUser125@gmail.com",
     };
     const { body } = await request(app)
       .patch("/users/1")
       .send(user)
       .expect(200);
-    expect(body.user[0]).toEqual({ user_id: 1, ...user });
+    expect(body.user[0].email).toEqual(user.email);
   });
 
   test("Status: 400, handles error when invalid properties are missing", async () => {
