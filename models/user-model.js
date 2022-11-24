@@ -39,7 +39,6 @@ const patchUser = async (user_id, body) => {
   if (email) {
     fields += (username ? ", " : "") + `email='${email}'`;
   }
-  console.log(fields);
   const results = await db.query(
     `UPDATE users ${fields} WHERE user_id = ${user_id} RETURNING *;`
   );
