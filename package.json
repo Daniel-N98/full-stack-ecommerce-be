@@ -2,7 +2,7 @@
   "name": "full-stack-ecommerce-be",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "listen.js",
   "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
