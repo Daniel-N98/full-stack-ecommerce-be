@@ -91,3 +91,14 @@ describe("GET /items?sort_by", () => {
     expect(body.message).toBe("Invalid query");
   });
 });
+
+describe("GET /items?limit", () => {
+  test("Status: 200, items received is less than or equal to the limit query", async () => {
+    const { body } = await request(app).get("/items/3?limit=3").expect(200);
+    expect(body.items.length).toBeLessThanOrEqual(3);
+  });
+  test("Status: 200, retrieves all items when limit is greater than total items", async () => {
+    const { body } = await request(app).get("/items/2?limit=5").expect(200);
+    expect(body.items.length).toBe(2);
+  });
+});
