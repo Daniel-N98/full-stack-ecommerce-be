@@ -2,10 +2,19 @@ import {
   fetchItems,
   fetchItemByID,
   fetchItemsByCategoryID,
+  fetchItemsByUserID,
 } from "../models/items-model.js";
 
 const getItems = (request, response, next) => {
-  fetchItems(request.params.user_id, request.query)
+  fetchItems()
+    .then((items) => {
+      response.status(200).send({ items });
+    })
+    .catch((error) => next(error));
+};
+
+const getItemsByUserID = (request, response, next) => {
+  fetchItemsByUserID(request.params.user_id, request.query)
     .then((items) => {
       response.status(200).send({ items });
     })
@@ -28,4 +37,4 @@ const getItemsByCategory = (request, response, next) => {
     .catch((error) => next(error));
 };
 
-export { getItems, getItemByID, getItemsByCategory };
+export { getItems, getItemsByUserID, getItemByID, getItemsByCategory };

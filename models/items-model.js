@@ -1,6 +1,11 @@
 import db from "../db/connection.js";
 
-const fetchItems = async (user_id, query) => {
+const fetchItems = async () => {
+  const results = await db.query("SELECT * FROM items");
+  return results.rows;
+};
+
+const fetchItemsByUserID = async (user_id, query) => {
   const validFields = ["cost", "quantity", "name"];
   const { order, sort_by, limit = 5 } = query;
   if (
@@ -33,4 +38,9 @@ const fetchItemsByCategoryID = async (category_id) => {
   return results.rows;
 };
 
-export { fetchItems, fetchItemByID, fetchItemsByCategoryID };
+export {
+  fetchItems,
+  fetchItemsByUserID,
+  fetchItemByID,
+  fetchItemsByCategoryID,
+};
