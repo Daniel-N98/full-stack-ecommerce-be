@@ -24,6 +24,7 @@ describe("GET /items", () => {
       preview_url: "https://facebook.com/en-us",
       cost: 131,
       quantity: 7,
+      category_id: 1,
     });
     expect(items[1]).toEqual({
       item_id: 9,
@@ -34,7 +35,16 @@ describe("GET /items", () => {
       preview_url: "https://youtube.com/sub",
       cost: 257,
       quantity: 4,
+      category_id: 5,
     });
+
+    expect(items).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          user_id: 3,
+        }),
+      ])
+    );
   });
 });
 
@@ -100,5 +110,19 @@ describe("GET /items?limit", () => {
   test("Status: 200, retrieves all items when limit is greater than total items", async () => {
     const { body } = await request(app).get("/items/2?limit=5").expect(200);
     expect(body.items.length).toBe(2);
+  });
+});
+
+describe("GET /items/category/:category_id", () => {
+  test("Status: 200, returns all items associated with the category_id parameter", async () => {
+    const { body } = await request(app).get("/items/category/2").expect(200);
+    expect(body.items.length).toBe(3);
+    expect(body.items).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          category_id: 2,
+        }),
+      ])
+    );
   });
 });

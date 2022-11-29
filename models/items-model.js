@@ -24,4 +24,13 @@ const fetchItemByID = async (user_id, item_id) => {
   return results.rows;
 };
 
-export { fetchItems, fetchItemByID };
+const fetchItemsByCategoryID = async (category_id) => {
+  const results = await db.query(
+    `SELECT * FROM items WHERE category_id = ${category_id}`
+  );
+  console.log(results.rows, "rows");
+
+  return results.rows;
+};
+
+export { fetchItems, fetchItemByID, fetchItemsByCategoryID };

@@ -7,6 +7,7 @@ const items = [
     preview_url: "https://facebook.com/en-us",
     cost: 131,
     quantity: 7,
+    category_id: 1,
   },
   {
     user_id: 1,
@@ -16,6 +17,7 @@ const items = [
     preview_url: "http://whatsapp.com/en-ca",
     cost: 286,
     quantity: 3,
+    category_id: 1,
   },
   {
     user_id: 1,
@@ -25,6 +27,7 @@ const items = [
     preview_url: "https://pinterest.com/one",
     cost: 289,
     quantity: 9,
+    category_id: 1,
   },
   {
     user_id: 1,
@@ -34,6 +37,7 @@ const items = [
     preview_url: "http://twitter.com/en-ca",
     cost: 23,
     quantity: 7,
+    category_id: 2,
   },
   {
     user_id: 4,
@@ -43,6 +47,7 @@ const items = [
     preview_url: "https://walmart.com/one",
     cost: 5,
     quantity: 8,
+    category_id: 3,
   },
   {
     user_id: 2,
@@ -52,6 +57,7 @@ const items = [
     preview_url: "http://walmart.com/fr",
     cost: 47,
     quantity: 3,
+    category_id: 3,
   },
   {
     user_id: 1,
@@ -61,6 +67,7 @@ const items = [
     preview_url: "http://guardian.co.uk/fr",
     cost: 114,
     quantity: 9,
+    category_id: 3,
   },
   {
     user_id: 1,
@@ -70,6 +77,7 @@ const items = [
     preview_url: "http://cnn.com/one",
     cost: 236,
     quantity: 8,
+    category_id: 2,
   },
   {
     user_id: 3,
@@ -79,6 +87,7 @@ const items = [
     preview_url: "https://youtube.com/sub",
     cost: 257,
     quantity: 4,
+    category_id: 5,
   },
   {
     user_id: 4,
@@ -88,6 +97,7 @@ const items = [
     preview_url: "https://wikipedia.org/one",
     cost: 484,
     quantity: 4,
+    category_id: 4,
   },
   {
     user_id: 3,
@@ -97,6 +107,7 @@ const items = [
     preview_url: "http://ebay.com/user/110",
     cost: 371,
     quantity: 6,
+    category_id: 3,
   },
   {
     user_id: 4,
@@ -105,6 +116,7 @@ const items = [
     preview_url: "http://yahoo.com/settings",
     cost: 495,
     quantity: 7,
+    category_id: 2,
   },
   {
     user_id: 3,
@@ -113,6 +125,7 @@ const items = [
     preview_url: "http://walmart.com/en-ca",
     cost: 112,
     quantity: 5,
+    category_id: 1,
   },
   {
     user_id: 2,
@@ -122,6 +135,7 @@ const items = [
     preview_url: "https://guardian.co.uk/sub",
     cost: 475,
     quantity: 1,
+    category_id: 1,
   },
   {
     user_id: 4,
@@ -130,6 +144,7 @@ const items = [
     preview_url: "https://guardian.co.uk/fr",
     cost: 135,
     quantity: 2,
+    category_id: 1,
   },
   {
     user_id: 4,
@@ -139,6 +154,7 @@ const items = [
     preview_url: "https://walmart.com/group/9",
     cost: 209,
     quantity: 9,
+    category_id: 1,
   },
   {
     user_id: 1,
@@ -148,6 +164,7 @@ const items = [
     preview_url: "http://instagram.com/one",
     cost: 24,
     quantity: 1,
+    category_id: 1,
   },
   {
     user_id: 1,
@@ -157,6 +174,7 @@ const items = [
     preview_url: "https://walmart.com/settings",
     cost: 356,
     quantity: 9,
+    category_id: 1,
   },
   {
     user_id: 4,
@@ -166,6 +184,7 @@ const items = [
     preview_url: "https://zoom.us/sub",
     cost: 182,
     quantity: 1,
+    category_id: 1,
   },
   {
     user_id: 3,
@@ -174,6 +193,7 @@ const items = [
     preview_url: "http://bbc.co.uk/group/9",
     cost: 231,
     quantity: 1,
+    category_id: 1,
   },
 ];
 

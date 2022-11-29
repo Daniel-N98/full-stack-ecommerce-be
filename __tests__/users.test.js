@@ -16,7 +16,12 @@ describe("GET /users", () => {
 
 describe("POST /users", () => {
   test("Status: 201, returns the inserted user", async () => {
-    const user = { username: "NewUser125", email: "NewUser125@gmail.com" };
+    const user = {
+      username: "NewUser125",
+      email: "NewUser125@gmail.com",
+      img_url:
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    };
     const { body } = await request(app).post("/users").send(user).expect(201);
     expect(body.user[0]).toEqual({ user_id: expect.any(Number), ...user });
   });
@@ -67,10 +72,12 @@ describe("PATCH /users/:user_id", () => {
     expect(body.user[0].email).toEqual(user.email);
   });
 
-  test("Status: 200, returns the updated user with the username and email changed", async () => {
+  test("Status: 200, returns the updated user with the username, email and img_url changed", async () => {
     const user = {
       username: "UpdatedUser125",
       email: "UpdatedUser125@gmail.com",
+      img_url:
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
     };
     const { body } = await request(app)
       .patch("/users/1")
