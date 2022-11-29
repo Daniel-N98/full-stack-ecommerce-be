@@ -24,6 +24,7 @@ describe("GET /items", () => {
       preview_url: "https://facebook.com/en-us",
       cost: 131,
       quantity: 7,
+      category_id: 1,
     });
     expect(items[1]).toEqual({
       item_id: 9,
@@ -34,6 +35,7 @@ describe("GET /items", () => {
       preview_url: "https://youtube.com/sub",
       cost: 257,
       quantity: 4,
+      category_id: 5,
     });
   });
 });

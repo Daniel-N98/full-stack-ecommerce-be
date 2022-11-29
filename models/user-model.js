@@ -13,22 +13,26 @@ const fetchUserByID = async (user_id) => {
 };
 
 const postUser = async (body) => {
-  const { username, email } = body;
+  const {
+    username,
+    email,
+    img_url = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+  } = body;
   if (!username || !email) {
     return Promise.reject({ code: 400, message: "Invalid body" });
   }
 
   const results = await db.query(
-    `INSERT INTO users (username, email) VALUES ($1, $2) RETURNING *;`,
-    [username, email]
+    `INSERT INTO users (username, email, img_url) VALUES ($1, $2, $3) RETURNING *;`,
+    [username, email, img_url]
   );
 
   return results.rows;
 };
 
 const patchUser = async (user_id, body) => {
-  const { username, email } = body;
-  if (!username && !email) {
+  const { username, email, img_url } = body;
+  if (!username && !email && !img_url) {
     return Promise.reject({ code: 400, message: "Invalid body" });
   }
   let fields = "SET ";
@@ -38,6 +42,10 @@ const patchUser = async (user_id, body) => {
   if (email) {
     fields += (username ? ", " : "") + `email='${email}'`;
   }
+  if (img_url) {
+    fields += (username || email ? ", " : "") + `img_url='${img_url}'`;
+  }
+  console.log(fields);
   const results = await db.query(
     `UPDATE users ${fields} WHERE user_id = ${user_id} RETURNING *;`
   );
